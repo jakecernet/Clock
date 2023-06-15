@@ -13,7 +13,7 @@
 <body>
     <nav>
         <ul>
-            <li onclick="countdownDisplay()"><a>Stopwatch</a></li>
+            <li onclick="stopwatchDisplay()"><a>Stopwatch</a></li>
             <li onclick="clockDisplay()"><a>Clock</a></li>
             <li onclick="countdownDisplay()"><a>Countdown</a></li>
         </ul>
@@ -26,9 +26,11 @@
             <h2>Stopwatch</h2>
             <div>
                 <span id="stopwatch-display">00:00:00</span>
-                <button id="start-btn">Start</button>
-                <button id="stop-btn">Stop</button>
-                <button id="reset-btn">Reset</button>
+                <div class="buttons">
+                    <button id="start-btn" onclick="startStopwatch()">Start</button>
+                    <button id="stop-btn">Stop</button>
+                    <button id="reset-btn" onclick="resetStopwatch()">Reset</button>
+                </div>
             </div>
         </section>
 
