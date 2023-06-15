@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch, Clock, and Countdown</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li onclick="countdownDisplay()"><a>Stopwatch</a></li>
+            <li onclick="clockDisplay()"><a>Clock</a></li>
+            <li onclick="countdownDisplay()"><a>Countdown</a></li>
+        </ul>
+    </nav>
+    <div class="contents">
+        <h1>Stopwatch, Clock, and Countdown</h1>
+
+        <!-- Stopwatch section -->
+        <section id="stopwatch">
+            <h2>Stopwatch</h2>
+            <div>
+                <span id="stopwatch-display">00:00:00</span>
+                <button id="start-btn">Start</button>
+                <button id="stop-btn">Stop</button>
+                <button id="reset-btn">Reset</button>
+            </div>
+        </section>
+
+        <!-- Clock section -->
+        <section id="clock">
+            <h2>Clock</h2>
+            <div>
+                <span id="clock-display">00:00:00</span>
+            </div>
+        </section>
+
+        <!-- Countdown section -->
+        <section id="countdown">
+            <h2>Countdown</h2>
+            <div>
+                <input type="datetime-local" id="countdown-input">
+                <button id="start-countdown-btn">Start Countdown</button>
+                <div id="countdown-display"></div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
