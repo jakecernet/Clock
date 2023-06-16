@@ -165,8 +165,6 @@ section div .buttons button:hover {
     color: #555;
     text-transform: uppercase;
     text-align: center;
-    padding-left: 45%;
-    padding-bottom: 5%;
-    border: 5px solid transparent;
-    border-bottom: 60px solid transparent;
+    padding-left: 40%;
+    padding-bottom: 5%;;
 }
