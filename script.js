@@ -47,7 +47,7 @@ function clockDisplayInfinite() {
 function startStopwatch() {
     var time = 0;
     var isRunning = false;
-    
+
     document.getElementById("start-btn").onclick = function () {
         if (isRunning) {
             clearInterval(interval);
@@ -71,12 +71,12 @@ function startStopwatch() {
                 }
                 document.getElementById("stopwatch-display").innerHTML = hours + " : " + minutes + " : " + seconds + " : " + tenths;
             }, 100);
-            
+
             isRunning = true;
             document.getElementById("start-btn").innerText = "Stop";
         }
     };
-    
+
     document.getElementById("reset-btn").onclick = function () {
         clearInterval(interval);
         resetStopwatch();
@@ -87,11 +87,11 @@ function resetStopwatch() {
     document.getElementById("stopwatch-display").innerHTML = "00 : 00 : 00 : 0";
 }
 
-function addTime() {
-    // Create a new li element
-    var li = document.createElement("li");
-    // Write time to the li element
-    li.innerHTML = time.innerHTML;
+function saveTime(){
+    var time = document.getElementById("stopwatch-display").innerHTML;
+    const li = document.createElement("li");
+    li.innerHTML = time;
+    document.getElementById("times-list").appendChild(li);
 }
 
 clock.style.display = "none";

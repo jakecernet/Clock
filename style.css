@@ -170,3 +170,21 @@ section div .buttons button:hover {
     border: 5px solid transparent;
     border-bottom: 60px solid transparent;
 }
+
+div .times h3{
+    font-size: 20px;
+    font-weight: 500;
+    color: #555;
+    text-transform: uppercase;
+    text-align: center;
+    border: 5px solid transparent;
+    border-bottom: 60px solid transparent;
+}
+
+div .times ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    flex-direction: column;
+}
