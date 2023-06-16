@@ -157,3 +157,16 @@ section div .buttons button:hover {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.479);
     scale: 1.01;
 }
+.čas{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #555;
+    text-transform: uppercase;
+    text-align: center;
+    padding-left: 45%;
+    padding-bottom: 5%;
+    border: 5px solid transparent;
+    border-bottom: 60px solid transparent;
+}
