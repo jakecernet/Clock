@@ -1,6 +1,7 @@
 var clock = document.getElementById("clock")
 var stopwatch = document.getElementById("stopwatch")
 var countdown = document.getElementById("countdown")
+var time = document.getElementById("stopwatch-display")
 
 function clockDisplay() {
     if (clock.style.display == "none") {
@@ -42,9 +43,9 @@ function clockDisplayInfinite() {
     setTimeout(clockDisplayInfinite, 1000);
 }
 
-function startStopwatch() { 
+function startStopwatch() {
     var time = 0;
-    var interval = setInterval(function() {
+    var interval = setInterval(function () {
         time++;
         var hours = Math.floor(time / 10 / 60 / 60);
         var minutes = Math.floor(time / 10 / 60);
@@ -61,14 +62,11 @@ function startStopwatch() {
         }
         document.getElementById("stopwatch-display").innerHTML = hours + " : " + minutes + " : " + seconds + " : " + tenths;
     }
-    , 100);
-    document.getElementById("start-btn").onclick = function() {
-        clearInterval(interval);
+        , 100);
+    document.getElementById("start-btn").onclick = function () {
+        document.getElementById("start-btn").innerText = "Stop";
     }
-    document.getElementById("stop-btn").onclick = function() {
-        clearInterval(interval);
-    }
-    document.getElementById("reset-btn").onclick = function() {
+    document.getElementById("reset-btn").onclick = function () {
         clearInterval(interval);
         resetStopwatch();
     }
@@ -76,6 +74,13 @@ function startStopwatch() {
 
 function resetStopwatch() {
     document.getElementById("stopwatch-display").innerHTML = "00 : 00 : 00 : 0";
+}
+
+function addTime() {
+    //create new li element
+    var li = document.createElement("li");
+    //write time to li element
+    li.innerHTML = time.innerHTML;
 }
 
 clock.style.display = "none";
