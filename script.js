@@ -39,10 +39,17 @@ function clockDisplayInfinite() {
     var hours = date.getHours();
     var minutes = date.getMinutes();
     var seconds = date.getSeconds();
-    var time = hours + " : " + minutes + " : " + seconds;
+
+    // Format hours, minutes, and seconds to have leading zeros if needed
+    hours = (hours < 10) ? "0" + hours + " " : + " " + hours;
+    minutes = (minutes < 10) ? "0" + minutes + " " : + " " + minutes;
+    seconds = (seconds < 10) ? "0" + seconds + " ": + " " + seconds;
+
+    var time = hours + ":" + minutes + ":" + seconds;
     document.getElementById("clock-display").innerHTML = time;
     setTimeout(clockDisplayInfinite, 1000);
 }
+
 
 function startStopwatch() {
     var time = 0;
