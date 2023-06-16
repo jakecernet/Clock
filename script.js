@@ -1,7 +1,8 @@
-var clock = document.getElementById("clock")
-var stopwatch = document.getElementById("stopwatch")
-var countdown = document.getElementById("countdown")
-var time = document.getElementById("stopwatch-display")
+var clock = document.getElementById("clock");
+var stopwatch = document.getElementById("stopwatch");
+var countdown = document.getElementById("countdown");
+var time = document.getElementById("stopwatch-display");
+var interval;
 
 function clockDisplay() {
     if (clock.style.display == "none") {
@@ -45,31 +46,41 @@ function clockDisplayInfinite() {
 
 function startStopwatch() {
     var time = 0;
-    var interval = setInterval(function () {
-        time++;
-        var hours = Math.floor(time / 10 / 60 / 60);
-        var minutes = Math.floor(time / 10 / 60);
-        var seconds = Math.floor(time / 10 % 60);
-        var tenths = time % 10;
-        if (hours < 10) {
-            hours = "0" + hours;
-        }
-        if (minutes < 10) {
-            minutes = "" + minutes;
-        }
-        if (seconds < 10) {
-            seconds = "0" + seconds;
-        }
-        document.getElementById("stopwatch-display").innerHTML = hours + " : " + minutes + " : " + seconds + " : " + tenths;
-    }
-        , 100);
+    var isRunning = false;
+    
     document.getElementById("start-btn").onclick = function () {
-        document.getElementById("start-btn").innerText = "Stop";
-    }
+        if (isRunning) {
+            clearInterval(interval);
+            isRunning = false;
+            document.getElementById("start-btn").innerText = "Start";
+        } else {
+            interval = setInterval(function () {
+                time++;
+                var hours = Math.floor(time / 10 / 60 / 60);
+                var minutes = Math.floor(time / 10 / 60);
+                var seconds = Math.floor(time / 10 % 60);
+                var tenths = time % 10;
+                if (hours < 10) {
+                    hours = "0" + hours;
+                }
+                if (minutes < 10) {
+                    minutes = "0" + minutes;
+                }
+                if (seconds < 10) {
+                    seconds = "0" + seconds;
+                }
+                document.getElementById("stopwatch-display").innerHTML = hours + " : " + minutes + " : " + seconds + " : " + tenths;
+            }, 100);
+            
+            isRunning = true;
+            document.getElementById("start-btn").innerText = "Stop";
+        }
+    };
+    
     document.getElementById("reset-btn").onclick = function () {
         clearInterval(interval);
         resetStopwatch();
-    }
+    };
 }
 
 function resetStopwatch() {
@@ -77,9 +88,9 @@ function resetStopwatch() {
 }
 
 function addTime() {
-    //create new li element
+    // Create a new li element
     var li = document.createElement("li");
-    //write time to li element
+    // Write time to the li element
     li.innerHTML = time.innerHTML;
 }
 
