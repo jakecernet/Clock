@@ -92,6 +92,9 @@ function startStopwatch() {
 
 function resetStopwatch() {
     document.getElementById("stopwatch-display").innerHTML = "00 : 00 : 00 : 0";
+    time = 0;
+    document.getElementById("times-list").innerHTML = "";
+    document.getElementById("start-btn").innerText = "Start";
 }
 
 function saveTime(){

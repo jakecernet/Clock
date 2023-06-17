@@ -92,7 +92,7 @@ nav ul li a:hover::after {
     transform-origin: bottom left;
 }
 
-nav ul li a:hover{
+nav ul li a:hover {
     text-shadow: 0 0 5px #000000;
 }
 
@@ -157,7 +157,8 @@ section div .buttons button:hover {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.479);
     scale: 1.01;
 }
-.čas{
+
+.čas {
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 20px;
@@ -166,10 +167,11 @@ section div .buttons button:hover {
     text-transform: uppercase;
     text-align: center;
     padding-left: 40%;
-    padding-bottom: 5%;;
+    padding-bottom: 5%;
+    ;
 }
 
-div .times h3{
+div .times h3 {
     font-size: 20px;
     font-weight: 500;
     color: #555;
@@ -179,7 +181,15 @@ div .times h3{
     border-bottom: 60px solid transparent;
 }
 
-div .times ul{
+div .times ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    flex-direction: column;
+}
+
+#times-list{
     display: flex;
     justify-content: center;
     align-items: center;
